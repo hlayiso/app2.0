@@ -36,7 +36,7 @@
             android:value="ca-app-pub-9367032188010082~1083337529" />
 
         <activity
-            android:name=" com.hlayiso.MainActivity"
+            android:name="com.hlayiso.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
