@@ -35,7 +35,7 @@ android {
     }
 
     defaultConfig {
-        applicationId " com.hlayiso"
+        applicationId "com.hlayiso"
         minSdkVersion 22
         targetSdkVersion 33
         versionCode 30
