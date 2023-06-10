@@ -1,4 +1,4 @@
-package  com.hlayiso
+package com.hlayiso
 
 import android.content.BroadcastReceiver
 import android.os.Bundle
