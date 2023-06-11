@@ -6,6 +6,7 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:hlayiso/component/app_open_ad.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
@@ -49,12 +50,23 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  late AppLifecycleReactor _appLifecycleReactor;
 
   @override
   void initState() {
     super.initState();
     setStatusBarColor(appStore.primaryColors,
         statusBarBrightness: Brightness.light);
+
+    /// App Open Ad
+    AppOpenAdManager appOpenAdManager = AppOpenAdManager()..loadAd();
+
+    _appLifecycleReactor =
+        AppLifecycleReactor(appOpenAdManager: appOpenAdManager);
+    _appLifecycleReactor.listenToAppStateChanges();
+
+    ///
+
     _connectivitySubscription =
         Connectivity().onConnectivityChanged.listen((e) async {
       appStore.setConnectionState(e);
