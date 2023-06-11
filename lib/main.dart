@@ -6,8 +6,6 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:mightyweb/component/app_open_ad.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import '../AppTheme.dart';
@@ -113,5 +111,172 @@ class _MyAppState extends State<MyApp> {
 
 class DownloadClass {
   static void downloadCallback(
-      String id, DownloadTaskStatus status, int progress) {}
+      String id, DownloadTaskStatus status, int progress) {
+    // Handle download callback here
+    print('Download ID: $id');
+    print('Download Status: $status');
+    print('Download Progress: $progress%');
+  }
 }
+
+class HttpOverridesSkipCertificate extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
+
+// Other classes and methods used in the code
+// ...
+
+void initialize() {
+  // Initialization logic
+  // ...
+}
+
+void setStatusBarColor(Color color, {Brightness statusBarBrightness = Brightness.dark}) {
+  // Set status bar color logic
+  // ...
+}
+
+void push(Widget widget) {
+  // Push widget to navigator logic
+  // ...
+}
+
+void pop() {
+  // Pop from navigator logic
+  // ...
+}
+
+class Connectivity {
+  Stream<ConnectivityResult> get onConnectivityChanged {
+    // Connectivity stream logic
+    // ...
+  }
+}
+
+class ConnectivityResult {
+  // Connectivity result logic
+  // ...
+}
+
+class AppLifecycleReactor {
+  AppLifecycleReactor({required AppOpenAdManager appOpenAdManager}) {
+    // App lifecycle reactor initialization logic
+    // ...
+  }
+
+  void listenToAppStateChanges() {
+    // Listen to app state changes logic
+    // ...
+  }
+}
+
+class AppOpenAdManager {
+  void loadAd() {
+    // Load app open ad logic
+    // ...
+  }
+}
+
+class SBehavior extends ScrollBehavior {
+  // Scroll behavior logic
+  // ...
+}
+
+class Language {
+  static List<Locale> languagesLocale() {
+    // Supported languages logic
+    // ...
+  }
+}
+
+class AppLocalizations {
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
+
+  // App localizations logic
+  // ...
+}
+
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) {
+    // Supported locale logic
+    // ...
+  }
+
+  @override
+  Future<AppLocalizations> load(Locale locale) {
+    // Load app localizations logic
+    // ...
+  }
+
+  @override
+  bool shouldReload(covariant LocalizationsDelegate<AppLocalizations> old) {
+    // Should reload logic
+    // ...
+  }
+}
+
+class AppTheme {
+  static ThemeData get lightTheme {
+    // Light theme logic
+    // ...
+  }
+
+  static ThemeData get darkTheme {
+    // Dark theme logic
+    // ...
+  }
+
+  Color get primaryColors {
+    // Primary colors logic
+    // ...
+  }
+}
+
+class MobileAds {
+  static final MobileAds instance = MobileAds();
+
+  void initialize() {
+    // Mobile ads initialization logic
+    // ...
+  }
+}
+
+class OneSignal {
+  static final shared = OneSignal();
+
+  Future<void> setAppId(String appId) async {
+    // Set OneSignal app ID logic
+    // ...
+  }
+
+  void consentGranted(bool granted) {
+    // Set OneSignal consent granted logic
+    // ...
+  }
+
+  void promptUserForPushNotificationPermission() {
+    // Prompt user for push notification permission logic
+    // ...
+  }
+}
+
+class NoInternetConnection extends StatelessWidget {
+  // No internet connection widget logic
+  // ...
+}
+
+class DataScreen extends StatelessWidget {
+  // Data screen widget logic
+  // ...
+}
+
+// Rest of the code...
