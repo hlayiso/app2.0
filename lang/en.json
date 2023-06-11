@@ -28,7 +28,9 @@
   "lbl_try_again": "Please try again later",
   "lbl_next": "Next",
   "lbl_finish": "Finish",
-  "msg_wrong_url": "Please check your URL",
-  "msg_add_configuration": "Please setup your app configuration",
+  "msg_wrong_url": "An error has occurred, we're fixing this. Please use the website while we fix this issue. Website: [www.hlayiso.com](https://www.hlayiso.com)",
+  // "msg_wrong_url": "Please check your URL",
+  "msg_add_configuration": "An error has occurred, we're fixing this. Please use the website while we fix this issue. Website: [www.hlayiso.com](https://www.hlayiso.com)",
+  // "msg_add_configuration": "Please setup your app configuration",
   "lbl_or": "Or"
 }
